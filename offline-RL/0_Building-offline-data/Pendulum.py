@@ -6,8 +6,8 @@ state_dim = env.observation_space.shape[0]  # 状态空间维度
 action_dim = env.action_space.shape[0]  # 动作空间维度
 max_action = env.action_space.high[0]  # 动作的最大值
 
-policy = SAC(state_dim, action_dim, max_action)  # 创建SAC模型
-policy.load('SAC_Pendulum', '30')
+policy = SAC(state_dim, action_dim, max_action)
+policy.load('SAC_Pendulum', '60')
 
 for i in range(3):
     # 使用 SAC 代理训练并获得策略值
