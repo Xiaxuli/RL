@@ -7,7 +7,7 @@ action_dim = env.action_space.shape[0]  # 动作空间维度
 max_action = env.action_space.high[0]  # 动作的最大值
 
 policy = BCQ(state_dim, action_dim, max_action, 'cpu', 3e-4, 32, 32, 32,
-             0.99, 0.005, 0.75, 0.05)
+             0.98, 0.005, 0.75, 0.05)
 policy.load('BCQ_Pendulum', '200')
 
 for i in range(3):

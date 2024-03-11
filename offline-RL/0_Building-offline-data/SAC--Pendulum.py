@@ -58,7 +58,7 @@ if __name__ == '__main__':
     param = {
         "env": "Pendulum-v1",  # OpenAI gym环境名称
         "seed": 42,  # 随机种子数
-        "max_time_steps": 90,  # 训练次数
+        "max_time_steps": 60,  # 训练次数
         "max_episodes": 500,  # 最大运行步长
         "save_interval": 30,  # 模型保存间隔
         "batch_size": 256,  # 网络训练的批量大小

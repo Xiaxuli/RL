@@ -13,8 +13,6 @@ def start_game(envs, model, replay_buffers):
         # 执行动作并获取下一个状态、奖励和结束标志
         next_state, reward, done, _, _ = envs.step(action)
         replay_buffers.add(state, action, next_state, reward, int(done))
-        if done:
-            break
         state = next_state
 
 

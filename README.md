@@ -18,4 +18,12 @@
 
 ### offline-RL
 
-该部分尚未完全实现，目前还在开发中，敬请期待。
+该部分包含了各种离线强化学习算法的实现，每个算法文件夹都可以独立运行并测试相应算法在不同环境中的性能。以下是各个算法的简单介绍：
+
+1. **BCQ（Behavioral Cloning from Offline Data with Q-Value Correction）**: 一种离线行为克隆算法，从离线数据中学习策略，并通过 Q 值校正来改进性能。
+2. **BEAR（Bootstrapping Error Accumulation Reduction）**: 一种离线强化学习算法，通过利用离线数据进行训练，并使用自举方法来减少误差积累。
+3. **TD3-BC（Twin Delayed Deep Deterministic Policy Gradient with Behavior Cloning）**: 一种基于行为克隆的双延迟深度确定性策略梯度算法，通过结合行为克隆和双延迟 DDPG 来提高算法性能。
+4. **CQL（Conservative Q-Learning）**: 一种离线 Q 学习算法，通过引入保守性目标来提高离线学习的稳定性和性能。
+5. **IQL（Implicit Quantile Networks for Distributional Reinforcement Learning）**: 一种基于分位函数的离线强化学习算法，通过学习动作价值的分布来提高性能。
+6. **AWAC（Actor-Critic with Adversarial Weight Perturbations）**: 一种离线强化学习算法，结合了确定性策略梯度和最大熵强化学习的思想，并使用生成对抗网络来提高策略学习的效果。
+7. **BC（Behavioral Cloning）**: 一种简单的离线行为克隆算法，通过直接复制专家策略来学习行为。

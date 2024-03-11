@@ -36,11 +36,11 @@ def train_bcq(params):
         # 使用 BCQ 代理训练并获得策略值
         policy.train(replay_buffer, iterations=int(params.get("eval_freq")), batch_size=params.get("batch_size"))
         # 模型评估
-        eval_policy(policy, params.get("env"), episode)
+        eval_policy(policy, params.get("env"), episode + 1)
         # 每50次迭代保存一次模型
         if (episode + 1) % 50 == 0:
-            policy.save(save_path, episode+1)
-            print(f"training_iters: {episode} Save to {save_path}")
+            policy.save(save_path, episode + 1)
+            print(f"training_iters: {episode + 1} Save to {save_path}")
 
 
 # 定义评估 BCQ 代理性能的函数
@@ -75,9 +75,9 @@ param = {
     "seed": 42,  # 设置 Gym、PyTorch 和 Numpy 的随机种子
     "buffer_name": "./Pendulum_buffers/sac",  # 离线数据集的位置
     "max_timestep": 200,  # 运行环境或训练所需的最大时间步长(定义缓冲区大小)
-    "eval_freq": 500,  # 评估频率（时间步数）
+    "eval_freq": 200,  # 评估频率（时间步数）
     "batch_size": 256,  # 网络训练的批量大小
-    "discount": 0.99,  # 折扣因子
+    "discount": 0.98,  # 折扣因子
     "tau": 0.005,  # 目标网络更新速率
     "lambda": 0.75,  # BCQ 中剪切双 Q-learning 的权重
     "phi": 0.05,  # BCQ 的最大扰动参数
